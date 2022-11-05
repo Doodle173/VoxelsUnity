@@ -6,7 +6,7 @@ public class World : MonoBehaviour
 {
 
     public Material material;
-    public Block blockTypes;
+    public Block[] blockTypes;
 
     // Start is called before the first frame update
     void Start()
