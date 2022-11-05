@@ -21,7 +21,6 @@ public class Chunk : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
         world = GameObject.Find("World").GetComponent<World>();
         populate_voxel_map();
         create_mesh_data();
