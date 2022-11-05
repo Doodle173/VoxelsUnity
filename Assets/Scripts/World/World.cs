@@ -17,10 +17,13 @@ public class World : MonoBehaviour
     Chunk[,] chunks = new Chunk[VoxelData.world_size_in_chunks, VoxelData.world_size_in_chunks];
     List<ChunkCoordinate> active_chunks = new List<ChunkCoordinate> ();
     ChunkCoordinate player_last_chunk_coord;
+    ChunkCoordinate player_chunk_coordinate;
 
     // Start is called before the first frame update
     void Start()
     {
+
+
         generate_world();
         player_last_chunk_coord = get_chunk_coord_from_vec3(player.transform.position);
     }
@@ -28,6 +31,7 @@ public class World : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        player_chunk_coordinate = get_chunk_coord_from_vec3(player.position);
         if (!get_chunk_coord_from_vec3(player.transform.position).equals(player_last_chunk_coord))
             check_view_distance();
     }
